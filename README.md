@@ -44,11 +44,24 @@ Navigate to your dashboard and copy your API key
 
 ### 3️⃣ Make Your First Request
 ```bash
-curl -X POST \
-  https://api.neuranets.link/v1/models/gpt-4 \
-  -H 'Authorization: Bearer YOUR_API_KEY' \
-  -H 'Content-Type: application/json' \
-  -d '{"input": "Hello, world!"}'
+curl -X POST "https://api.neuralnets.link" \
+  -H "Content-Type: application/json" \
+  -H "x-api-key: YOUR_API_KEY" \
+  -d '{
+    "model": "YOUR_MODEL_CHOICE",
+    "messages": [
+      {
+        "role": "user",
+        "content": [
+          {
+            "type": "text",
+            "text": "Hello, world!"
+          }
+        ]
+      }
+    ],
+    "reasoning": { "effort": "medium" }
+  }'
 ```
 
 ---
@@ -61,45 +74,74 @@ import requests
 
 # Configuration
 API_KEY = "your_api_key_here"
-MODEL_ID = "gpt-4"
-BASE_URL = "https://api.neuranets.link/v1"
+MODEL_ID = "your_model_choice"
+BASE_URL = "https://api.neuralnets.link"
 
 # Headers
 headers = {
-    "Authorization": f"Bearer {API_KEY}",
-    "Content-Type": "application/json"
+    "Content-Type": "application/json",
+    "x-api-key": API_KEY
+}
+
+# Prepare request data
+data = {
+    "model": MODEL_ID,
+    "messages": [
+        {
+            "role": "user",
+            "content": [
+                {
+                    "type": "text",
+                    "text": "Explain quantum computing in simple terms"
+                }
+            ]
+        }
+    ],
+    "reasoning": {"effort": "medium"}
 }
 
 # Make request
-response = requests.post(
-    f"{BASE_URL}/models/{MODEL_ID}",
-    headers=headers,
-    json={"input": "Explain quantum computing in simple terms"}
-)
+response = requests.post(BASE_URL, headers=headers, json=data)
 
 # Handle response
 if response.status_code == 200:
     result = response.json()
-    print(result['output'])
+    print(result)
 else:
-    print(f"Error: {response.status_code}")
+    print(f"Error: {response.status_code} - {response.text}")
 ```
 
 ### 🟨 JavaScript/Node.js
 ```javascript
 const API_KEY = "your_api_key_here";
-const MODEL_ID = "gpt-4";
-const BASE_URL = "https://api.neuranets.link/v1";
+const MODEL_ID = "your_model_choice";
+const BASE_URL = "https://api.neuralnets.link";
 
-async function callModel(input) {
+async function callModel(message) {
+    const requestData = {
+        model: MODEL_ID,
+        messages: [
+            {
+                role: "user",
+                content: [
+                    {
+                        type: "text",
+                        text: message
+                    }
+                ]
+            }
+        ],
+        reasoning: { effort: "medium" }
+    };
+
     try {
-        const response = await fetch(`${BASE_URL}/models/${MODEL_ID}`, {
+        const response = await fetch(BASE_URL, {
             method: "POST",
             headers: {
-                "Authorization": `Bearer ${API_KEY}`,
-                "Content-Type": "application/json"
+                "Content-Type": "application/json",
+                "x-api-key": API_KEY
             },
-            body: JSON.stringify({ input })
+            body: JSON.stringify(requestData)
         });
 
         if (!response.ok) {
@@ -107,7 +149,7 @@ async function callModel(input) {
         }
 
         const data = await response.json();
-        return data.output;
+        return data;
     } catch (error) {
         console.error('API call failed:', error);
         throw error;
@@ -126,7 +168,24 @@ callModel("Write a haiku about artificial intelligence")
 
 We provide access to cutting-edge AI models across multiple categories:
 
-| Category | Examples | Use Cases |
+| Category | Examples | Use Cases |curl -X POST "https://api.neuralnets.link" \
+  -H "Content-Type: application/json" \
+  -H "x-api-key: sk-ce420d58262144d8a5389606ac486bc904e2a6c547f9464a94bac2e879044326" \
+  -d '{
+    "model": "qwen/qwen3-30b-a3b",
+    "messages": [
+      {
+        "role": "user",
+        "content": [
+          {
+            "type": "text",
+            "text": "Explain quantum mechanics to a 5 year old."
+          }
+        ]
+      }
+    ],
+    "reasoning": { "effort": "medium" }
+  }'
 |----------|----------|-----------|
 | 💬 **Text Generation** | GPT-4, Claude, PaLM | Content creation, chatbots, writing assistance |
 | 🖼️ **Image Recognition** | CLIP, ResNet, EfficientNet | Image classification, object detection |
@@ -141,10 +200,10 @@ We provide access to cutting-edge AI models across multiple categories:
 
 ## 🔐 Authentication
 
-All API requests require authentication using your API key:
+All API requests require authentication using your API key in the `x-api-key` header:
 
 ```http
-Authorization: Bearer YOUR_API_KEY
+x-api-key: YOUR_API_KEY
 ```
 
 ### 🛡️ Security Best Practices
