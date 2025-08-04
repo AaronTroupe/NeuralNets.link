@@ -168,24 +168,7 @@ callModel("Write a haiku about artificial intelligence")
 
 We provide access to cutting-edge AI models across multiple categories:
 
-| Category | Examples | Use Cases |curl -X POST "https://api.neuralnets.link" \
-  -H "Content-Type: application/json" \
-  -H "x-api-key: sk-ce420d58262144d8a5389606ac486bc904e2a6c547f9464a94bac2e879044326" \
-  -d '{
-    "model": "qwen/qwen3-30b-a3b",
-    "messages": [
-      {
-        "role": "user",
-        "content": [
-          {
-            "type": "text",
-            "text": "Explain quantum mechanics to a 5 year old."
-          }
-        ]
-      }
-    ],
-    "reasoning": { "effort": "medium" }
-  }'
+| Category | Examples | Use Cases |
 |----------|----------|-----------|
 | 💬 **Text Generation** | GPT-4, Claude, PaLM | Content creation, chatbots, writing assistance |
 | 🖼️ **Image Recognition** | CLIP, ResNet, EfficientNet | Image classification, object detection |
@@ -239,13 +222,7 @@ All API responses follow a consistent structure:
 
 ## 💰 Pricing
 
-| Tier | Monthly Requests | Price | Features |
-|------|-----------------|-------|----------|
-| 🆓 **Free** | 1,000 | $0 | Basic models, community support |
-| 🚀 **Pro** | 100,000 | $29 | All models, priority support |
-| 🏢 **Enterprise** | Unlimited | Custom | SLA, custom models, dedicated support |
-
-> 💡 **[View Detailed Pricing →](https://neuranets.link/pricing)**
+For detailed pricing information for all models, access the models tab in [neuralnets.link/dashboard](https://neuralnets.link/dashboard) or simply hit the GET API endpoint [neuralnets.link/api/models](https://neuralnets.link/api/models) to see all models pricing.
 
 ---
 
@@ -268,27 +245,7 @@ All API responses follow a consistent structure:
 
 Need help? We're here for you!
 
-| Channel | Response Time | Availability |
-|---------|---------------|--------------|
-| 📧 Email | 24 hours | support@neuranets.link |
-| 💬 Live Chat | Instant | Business hours |
-| 📚 Documentation | Always | docs.neuranets.link |
-| 🐛 Issues | 48 hours | GitHub Issues |
-
----
-
-## 🤝 Contributing
-
-We welcome contributions! Here's how you can help:
-
-1. 🍴 Fork the repository
-2. 🌿 Create a feature branch
-3. ✨ Make your changes
-4. 🧪 Add tests
-5. 📝 Update documentation
-6. 🚀 Submit a pull request
-
-See our [Contributing Guide](CONTRIBUTING.md) for detailed instructions.
+Visit our documentation at [neuralnets.link/documentation](https://neuralnets.link/documentation), or access the support Discord for any questions or issues at [https://discord.com/invite/TGNMBASxYa](https://discord.com/invite/TGNMBASxYa)
 
 ---
 
@@ -299,11 +256,3 @@ This project is licensed under the **MIT License** - see the [LICENSE.md](LICENS
 ---
 
 <div align="center">
-
-### 🌟 Star us on GitHub if you find NeuralNets.link helpful!
-
-**Made with ❤️ by the NeuralNets.link Team**
-
-[Website](https://neuranets.link) • [Documentation](https://docs.neuranets.link) • [Status Page](https://status.neuranets.link) • [Blog](https://blog.neuranets.link)
-
-</div>
