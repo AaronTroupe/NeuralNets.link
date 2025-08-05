@@ -25,8 +25,6 @@ NeuralNets.link is a **unified API platform** that provides seamless access to o
 
 ### 🔥 Key Features
 
-</div>
-
 <table>
 <tr>
 <td align="center">🔗<br><strong>Unified API</strong><br>One API for all models</td>
@@ -35,6 +33,8 @@ NeuralNets.link is a **unified API platform** that provides seamless access to o
 <td align="center">💰<br><strong>Cost Effective</strong><br>Pay only what you use</td>
 </tr>
 </table>
+
+</div>
 
 ---
 
