@@ -1,6 +1,6 @@
-# 🧠 NeuralNets.link
-
 <div align="center">
+
+# NeuralNets.link
 
 **Unified API for AI Models**
 
@@ -9,9 +9,9 @@
 [![API Status](https://img.shields.io/badge/API-Live-brightgreen)](https://api.neuranets.link)
 [![Models](https://img.shields.io/badge/Models-250+-blue)](https://neuranets.link/models)
 [![Providers](https://img.shields.io/badge/Providers-50+-purple)](https://neuranets.link/providers)
-[![License](https://img.shields.io/badge/License-MIT-yellow)](LICENSE.md)
+[![License](https://img.shields.io/badge/License-API%20License-red)](LICENSE.md)
 
-[🚀 Get Started](#-getting-started) • [📖 Documentation](https://docs.neuranets.link) • [💰 Pricing](https://neuranets.link/pricing) • [🆘 Support](#-support)
+[🚀 Get Started](https://neuralnets.link/login) • [📖 Documentation](https://neuralnets.link/documentation) • [🆘 Support](https://discord.com/invite/TGNMBASxYa)
 
 </div>
 
@@ -37,10 +37,10 @@ NeuralNets.link is a **unified API platform** that provides seamless access to o
 ## 🚀 Getting Started
 
 ### 1️⃣ Sign Up
-Create your account at [NeuralNets.link](https://neuranets.link)
+Create your account at [NeuralNets.link](https://neuralnets.link/login)
 
 ### 2️⃣ Get Your API Key
-Navigate to your dashboard and copy your API key
+Get your API key from the [dashboard](https://neuralnets.link/dashboard)
 
 ### 3️⃣ Make Your First Request
 ```bash
@@ -59,8 +59,7 @@ curl -X POST "https://api.neuralnets.link" \
           }
         ]
       }
-    ],
-    "reasoning": { "effort": "medium" }
+    ]
   }'
 ```
 
@@ -96,8 +95,7 @@ data = {
                 }
             ]
         }
-    ],
-    "reasoning": {"effort": "medium"}
+    ]
 }
 
 # Make request
@@ -130,8 +128,7 @@ async function callModel(message) {
                     }
                 ]
             }
-        ],
-        reasoning: { effort: "medium" }
+        ]
     };
 
     try {
@@ -174,16 +171,14 @@ We provide access to cutting-edge AI models across multiple categories:
 | 🖼️ **Image Recognition** | CLIP, ResNet, EfficientNet | Image classification, object detection |
 | 🗣️ **Natural Language** | BERT, RoBERTa, T5 | Sentiment analysis, text classification |
 | 🌐 **Translation** | mT5, MarianMT | Multi-language translation |
-| 🎨 **Image Generation** | DALL-E, Midjourney, Stable Diffusion | Creative content, art generation |
-| 🔊 **Audio Processing** | Whisper, WaveNet | Speech-to-text, audio synthesis |
 
-> 📋 **[View Complete Model Catalog →](https://neuranets.link/models)**
+> 📋 **[View Complete Model Catalog →](https://neuranets.link/dashboard)**
 
 ---
 
 ## 🔐 Authentication
 
-All API requests require authentication using your API key in the `x-api-key` header:
+All API requests require authentication using your API key in the `x-api-key` header. You can get your API key from the [dashboard](https://neuralnets.link/dashboard).
 
 ```http
 x-api-key: YOUR_API_KEY
@@ -200,21 +195,44 @@ x-api-key: YOUR_API_KEY
 
 ## 📊 Response Format
 
-All API responses follow a consistent structure:
+All API responses follow the OpenAI-compatible structure:
 
 ```json
 {
-  "success": true,
+  "id": "82560878-19a0-c49f-ebe7-bd6cafdbafc4",
+  "object": "chat.completion",
+  "created": 1754397150,
   "model": "gpt-4",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "Your AI-generated response here...",
+        "refusal": null
+      },
+      "finish_reason": "stop"
+    }
+  ],
   "usage": {
-    "tokens": 150,
-    "cost": 0.003
+    "prompt_tokens": 28,
+    "completion_tokens": 150,
+    "total_tokens": 178,
+    "prompt_tokens_details": {
+      "text_tokens": 28,
+      "audio_tokens": 0,
+      "image_tokens": 0,
+      "cached_tokens": 5
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "audio_tokens": 0,
+      "accepted_prediction_tokens": 0,
+      "rejected_prediction_tokens": 0
+    },
+    "num_sources_used": 0
   },
-  "output": "Your AI-generated response here...",
-  "metadata": {
-    "request_id": "req_abc123",
-    "processing_time": 1.2
-  }
+  "system_fingerprint": "fp_0d42a4eb3d"
 }
 ```
 
@@ -224,35 +242,35 @@ All API responses follow a consistent structure:
 
 For detailed pricing information for all models, access the models tab in [neuralnets.link/dashboard](https://neuralnets.link/dashboard) or simply hit the GET API endpoint [neuralnets.link/api/models](https://neuralnets.link/api/models) to see all models pricing.
 
----
-
-## 📚 Resources
-
-### 📖 Documentation
-- [API Reference](https://docs.neuranets.link/api)
-- [Model Guides](https://docs.neuranets.link/models)
-- [Integration Examples](https://docs.neuranets.link/examples)
-- [SDKs & Libraries](https://docs.neuranets.link/sdks)
-
-### 🎓 Tutorials
-- [Getting Started Guide](https://docs.neuranets.link/getting-started)
-- [Best Practices](https://docs.neuranets.link/best-practices)
-- [Common Use Cases](https://docs.neuranets.link/use-cases)
-
----
-
 ## 🆘 Support
 
-Need help? We're here for you!
-
-Visit our documentation at [neuralnets.link/documentation](https://neuralnets.link/documentation), or access the support Discord for any questions or issues at [https://discord.com/invite/TGNMBASxYa](https://discord.com/invite/TGNMBASxYa)
+Need help? Join our Discord community at [https://discord.com/invite/TGNMBASxYa](https://discord.com/invite/TGNMBASxYa) for support and discussions.
 
 ---
 
 ## 📄 License
 
-This project is licensed under the **MIT License** - see the [LICENSE.md](LICENSE.md) file for details.
+This service is governed by the **NeuralNets.link API License Agreement**. While our backend infrastructure remains proprietary, developers are granted commercial usage rights to build applications using our API services.
 
----
+### API License Summary
 
-<div align="center">
+**✅ What You Can Do:**
+- Build commercial applications using our API
+- Integrate our services into your products
+- Resell applications that use our API
+- Use our API for business purposes
+
+**❌ What You Cannot Do:**
+- Access, reverse engineer, or copy our backend code
+- Redistribute or resell direct API access
+- Use the service for illegal or harmful content
+- Exceed rate limits or attempt to circumvent restrictions
+
+**📋 Key Terms:**
+- **Service License**: Non-exclusive right to use our API services
+- **Commercial Use**: Full commercial rights for applications built with our API
+- **Data Ownership**: You retain ownership of your input data and own the API output
+- **Usage Limits**: Subject to rate limits and fair use policies
+- **Support**: Best-effort support through our official channels
+
+For complete terms, see our [API License Agreement](https://neuranets.link/license) and [Terms of Service](https://neuranets.link/terms).
