@@ -172,8 +172,6 @@ We provide access to cutting-edge AI models across multiple categories:
 | 🗣️ **Natural Language** | BERT, RoBERTa, T5 | Sentiment analysis, text classification |
 | 🌐 **Translation** | mT5, MarianMT | Multi-language translation |
 
-> 📋 **[View Complete Model Catalog →](https://neuranets.link/dashboard)**
-
 ---
 
 ## 🔐 Authentication
