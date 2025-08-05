@@ -17,11 +17,15 @@
 
 ---
 
+<div align="center">
+
 ## 🎯 What is NeuralNets.link?
 
 NeuralNets.link is a **unified API platform** that provides seamless access to over **250 AI models** from more than **50 leading providers**. We simplify AI integration for developers and businesses by offering a single, standardized interface to interact with diverse AI capabilities.
 
 ### 🔥 Key Features
+
+</div>
 
 <table>
 <tr>
