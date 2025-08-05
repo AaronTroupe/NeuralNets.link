@@ -275,4 +275,4 @@ This service is governed by the **NeuralNets.link API License Agreement**. While
 - **Usage Limits**: Subject to rate limits and fair use policies
 - **Support**: Best-effort support through our official channels
 
-For complete terms, see our [API License Agreement](https://neuranets.link/license) and [Terms of Service](https://neuranets.link/terms).
+For complete terms, see our [API License Agreement](https://neuralnets.link/license) and [Terms of Service](https://neuralnets.link/terms).
